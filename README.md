@@ -11,5 +11,5 @@
   10. Query Scope (Global & Local)
   11. One To One and One To Many Polymorphic Relationship
   12. Many To Many Polymorphic Relationship
-  13. Model CRUD Operation
+  13. Model CRUD Operation using ORM
   
