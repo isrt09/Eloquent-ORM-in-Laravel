@@ -1,4 +1,4 @@
-# Eloquent-ORM-in-Laravel
+# Eloquent ORM in Laravel
   1. One To One Relationship
   2. One To Many Relationship
   3. Many To Many Relationship
