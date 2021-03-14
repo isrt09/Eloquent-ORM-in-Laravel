@@ -2,7 +2,7 @@
   1. One To One Relationship
   2. One To Many Relationship
   3. Many To Many Relationship
-  4. Has Many Through and Has One Through Relationship
+  4. Has Many Through, Has One Through Relationship
   5. Attach, Detach and Sync Method
   6. Lazy Loading and Eager Loading
   7. Mass Assignment
