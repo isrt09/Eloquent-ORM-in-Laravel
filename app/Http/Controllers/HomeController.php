@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Post;
+use App\Category;
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts      = Post::all();
+        $categories = Category::all();
+        return view('home',compact('categories',$categories,'posts',$posts));
     }
 }
