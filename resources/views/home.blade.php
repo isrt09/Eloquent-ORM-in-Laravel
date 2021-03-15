@@ -25,6 +25,15 @@
                                   <option value="{{ $category->id }}">{{ $category->name }}</option>
                                @endforeach                               
                            </select>
+                       </div>
+                       <div class="form-group row">
+                           <label for="name">Post Tags :</label>
+                           <select name="tags[]" id="" class="form-control" multiple>
+                              <option selected="" disabled="">Choose a Tag</option>                      
+                           @foreach ($tags as $tag)                                                
+                              <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                           @endforeach                               
+                           </select>
                        </div>                                          
                        <div class="form-group row">                           
                            <input type="submit" class="btn btn-success" value="Save">
@@ -42,8 +51,12 @@
                     <div class="card-header">{{ $post->title }}</div>
                     <div class="card-body">
                         <p>{{ $post->description }}</br>
-                            <span><b>Author : </b>{{ Auth::user()->name }}</span>                           
-                            <span><b>Category : </b>{{$post->category->name}}</span>
+                            <span><a href=""><b class="badge badge-success">Author: </b>{{Auth::user()->name}}</a></span> 
+                            <span><a href="{{ route('category',$post->category_id) }}"><b class="badge badge-info">Category : </b>{{$post->category->name}}</span></a>
+                            <span class="badge badge-danger"> Tags: </span>
+                            @foreach ($post->tag as $tag)
+                               <b class="badge badge-warning">{{$tag->name,}}</b>
+                            @endforeach
                         </p>
                     </div>                   
                 @endforeach                                
@@ -52,3 +65,4 @@
     </div>
 </div>
 @endsection
+

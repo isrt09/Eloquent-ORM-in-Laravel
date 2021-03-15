@@ -23,4 +23,26 @@ class Post extends Model
     	// belongsTo(RelatedModel, foreignKey = category_id, keyOnRelatedModel = id)
     	return $this->belongsTo(Category::class);
     }
+
+    /**
+     * Post belongs to User.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        // belongsTo(RelatedModel, foreignKey = user_id, keyOnRelatedModel = id)
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Post belongs to Tag.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function tag()
+    {
+        // belongsTo(RelatedModel, foreignKey = tag_id, keyOnRelatedModel = id)
+        return $this->belongsToMany(Tag::class);
+    }
 }
